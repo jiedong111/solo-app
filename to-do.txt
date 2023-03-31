@@ -1,0 +1,38 @@
+1. Implement final pieces of CRUD functionality
+    [X] delete
+    [X] update
+2. This should be fairly simple, but requires adding ID properly to each event
+3. Once this is finished, the logic for managing multiple pages, IE multiple days
+   should be implemented
+   Only a single date should display at once, so the overall render should be the Day.
+   Requirements for this implementation are as follows
+   [X] add currentDay to context
+   [X] drop CalendarContainer down and wrap it in Day component
+   //Original implementation was unnecessary, simply added a day column to each event, then grabbed events
+     based on current day. May need to implement some aspects of original implementation when doing
+     navigation but I don't think so. All I need to do is move the currentDay with the navigation and
+     the render should update to include no events because no events are on the currentDay in database.
+   [x] implement navigation to move between days
+   [x] implement datepicker
+        [X] resolve middlewares so they actually work as intended
+            [X] massive pita
+            [X] every action must pass date info
+            [X] every update, add, or delete will call fetch afterwards
+        [] transition from luxon to dayjs
+        [] UGHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+    [X] Finish datepicker crap
+
+//If you get bored once you finish 2 and need a break from other stuff
+
+1. Figure out mapping events to hour display
+    [X] events map properly to hour display on manual update and addition
+    [] figure out how to map events dynamically on drag and resize, and how to update time dynamically
+        [] figure out how to get size to update properly on completion of resize
+        [] figure out how to send that information to backend
+        [] figure out how to get position to update properly on completion of drag
+        [] figure out how to dynamically update times according to resize
+        [] figure out how to dynamically update times according to drag
+//Sidequest
+
+[] Reorganize context so there are less re-renders
+    [] This is going to be the actual massive pita xdd
